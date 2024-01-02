@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS Utilisateur;
+DROP TABLE IF EXISTS Livres;
+
+CREATE TABLE Livres (
+    ID_Livre INT NOT NULL AUTO_INCREMENT,
+    Titre VARCHAR(50) NOT NULL,
+    Auteur VARCHAR(50) NOT NULL,
+    Anne INT NOT NULL,
+
+    PRIMARY KEY (ID_Livre)
+);
+
+CREATE TABLE Utilisateur (
+    ID_User INT NOT NULL AUTO_INCREMENT,
+    Mail VARCHAR(50) NOT NULL,
+    Pass VARCHAR(50) NOT NULL,
+
+    PRIMARY KEY (ID_User)
+);
