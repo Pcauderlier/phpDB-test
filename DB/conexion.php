@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$db = "test"; 
-$user = "root";
-$pass= "root";
+$db = "u349060536_CAUDERLIER"; 
+$user = "u349060536_CAUDERLIER";
+$pass= "1-2345678a-A";
 $chrs = "utf8mb4";
 $attr = "mysql:host=$host;dbname=$db;charset=$chrs";
 $opts= [

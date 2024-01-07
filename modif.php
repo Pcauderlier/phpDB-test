@@ -17,8 +17,14 @@
     <?php
         require "./DB/conexion.php";
         require './functions.php';
+        if (isset($_POST['IdSupr'])){
+            
+            $idSupr = $_POST['IdSupr'];
+            $sql = "DELETE FROM livres WHERE ID_Livre = ? ";
+            $res = $pdo->prepare($sql);
+            $res->execute([$idSupr]);
+        }
         if (isset($_POST['0'])){
-            echo"coucou";
             $sql = "UPDATE livres SET Titre = ? ,Auteur = ? ,Anne = ? WHERE ID_Livre = ". $_POST['0'].";";
             $res = $pdo->prepare($sql);
             $res->execute([$_POST['1'],$_POST['2'],$_POST['3']]);
@@ -42,14 +48,14 @@
                 ";
                 
                 for ($i = 1 ; $i < count($row) ; $i++){
-                    echo " <input type='text' value=".$row[$i]." name='$i' >";
+                    echo " <input type='text' value=".htmlentities($row[$i])." name='$i' >";
                 } 
                 echo "<input type='submit' value='sauvegarder'></form>"
                 ;
             }
             else{
                 for ($i = 0 ; $i < count($row) ; $i++){
-                    echo "<span>". $row[$i] . "</span>";
+                    echo "<span>". htmlentities($row[$i]) . "</span>";
                     
                 }
                 echo"
@@ -58,9 +64,9 @@
                         <input type='hidden' name='row' value=".$row[0]."> 
                         <input type='submit' value='modifier'>
                     </form>
-                    <form method='post' action='./modif.php'>
+                    <form method='post' action='./delete.php'>
                         <input type='hidden' name='action' value='suprimer'>
-                        <input type='hidden' name='row' value=".$row[0].">
+                        <input type='hidden' name='id' value=".$row[0].">
                         <input type='submit' value='suprimer'>
                     </form>
                 ";

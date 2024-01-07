@@ -7,7 +7,7 @@
         $columnNames = $res->fetchAll(); // permet de tout stocker dans une liste
         echo '<tr>';
         foreach ($columnNames as $names){
-            echo "<th>".$names[0] . "</th>";
+            echo "<th>".htmlentities($names[0]) . "</th>";
         }
         echo "</tr>";
     }
@@ -15,7 +15,7 @@
         foreach ($tab as $row){
             echo ('<tr>');
             for ($i = 0 ; $i < count($row); $i++){
-                echo "<td>".$row[$i] . "</td>";
+                echo "<td>".htmlentities($row[$i]) . "</td>";
             }
             echo "</tr>";
         }

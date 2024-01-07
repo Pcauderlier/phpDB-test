@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <h1>Librairies en ligne</h1>
+    <h1>Librairies en lignes</h1>
     <nav>
         <a href="./index.php">Home</a>
         <a href="./searchBook.php" >Recherche</a>
