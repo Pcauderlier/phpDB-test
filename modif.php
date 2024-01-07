@@ -14,6 +14,7 @@
         <a href="./addBook.php">Ajouter un livre</a>
         <a href="./modif.php">Modifier</a>
     </nav>
+    <div class="modifier">
     <?php
         require "./DB/conexion.php";
         require './functions.php';
@@ -34,7 +35,6 @@
             $res = $pdo->prepare($sql);
             $res->execute([$_POST['row']]);
         }
-        echo "<div class='modifier'>";
 
         $res = $pdo->query("SELECT * FROM livres");
         $tab = $res->fetchAll(PDO ::FETCH_NUM);
@@ -74,8 +74,7 @@
 
             echo"</div>";
         }
-        echo "</div>"
-
     ?>
+    </div>
 </body>
 </html>
